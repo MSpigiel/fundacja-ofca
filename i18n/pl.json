@@ -1,8 +1,32 @@
 {
   "site": {
-    "title": "Fundacja Ofca",
-    "subtitle": "Strona w budowie",
-    "comingSoon": "Wkrotce tutaj pojawi sie nasza nowa strona internetowa.",
-    "stayTuned": "Badzcie z nami!"
+    "title": "Fundacja OFCA",
+    "comingSoon": "Wkrótce tutaj pojawi się nasza nowa strona internetowa.",
+    "stayTuned": "Bądźcie z nami!"
+  },
+  "nav": {
+    "about": "O Fundacji",
+    "projects": "Projekty",
+    "news": "Aktualności",
+    "center": "Centrum Wspierania Organizacji Pozarządowych",
+    "centerShort": "Centrum Wspierania",
+    "contact": "Kontakt"
+  },
+  "projects": {
+    "festival": "Festiwal OFCA",
+    "workshops": "Warsztaty cyrkowe dla dzieci",
+    "center": "Centrum Wspierania Organizacji Pozarządowych"
+  },
+  "center": {
+    "goals": "Cele i zakres wsparcia",
+    "hours": "Godziny pracy",
+    "reservation": "Rezerwacja Sali",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "siteMap": "Mapa Strony",
+    "contact": "Kontakt",
+    "followUs": "Obserwuj nas",
+    "rights": "Wszelkie prawa zastrzeżone."
   }
 }

@@ -1,13 +1,15 @@
 <template>
-  <div class="flex gap-3 text-sm text-stone-400">
+  <div class="flex gap-2 text-sm">
     <NuxtLink
       v-for="locale in availableLocales"
       :key="locale.code"
       :to="switchLocalePath(locale.code)"
-      class="transition-colors hover:text-stone-700"
-      :class="{ 'font-medium text-stone-700': locale.code === currentLocale }"
+      class="font-heading uppercase tracking-wider transition-colors hover:text-dark/60"
+      :class="locale.code === currentLocale ? 'font-bold text-dark' : 'text-dark/40'"
+      :aria-label="`Switch to ${locale.name}`"
+      :aria-current="locale.code === currentLocale ? 'true' : undefined"
     >
-      {{ locale.name }}
+      {{ locale.code }}
     </NuxtLink>
   </div>
 </template>

@@ -1,27 +1,18 @@
 <template>
-  <div class="flex min-h-screen flex-col items-center justify-center px-6">
-    <div class="max-w-lg text-center">
-      <h1 class="mb-4 text-5xl font-light tracking-tight text-stone-900">
-        {{ $t('site.title') }}
-      </h1>
+  <div class="container mx-auto px-4 py-16">
+    <!-- Slider placeholder -->
+    <section class="mb-16">
+      <div class="flex h-80 items-center justify-center bg-dark/5">
+        <p class="font-heading text-xl uppercase tracking-wider text-dark/30">Slider</p>
+      </div>
+    </section>
 
-      <div class="mx-auto mb-8 h-px w-16 bg-stone-300" />
-
-      <p class="mb-2 text-lg font-medium uppercase tracking-widest text-stone-500">
-        {{ $t('site.subtitle') }}
-      </p>
-
-      <p class="mb-8 text-stone-600">
+    <!-- About excerpt -->
+    <section class="mx-auto max-w-3xl text-center">
+      <h2 class="mb-6 text-4xl font-bold uppercase">{{ $t('site.title') }}</h2>
+      <p class="text-lg leading-relaxed text-dark/70">
         {{ $t('site.comingSoon') }}
       </p>
-
-      <p class="text-sm text-stone-400">
-        {{ $t('site.stayTuned') }}
-      </p>
-    </div>
-
-    <div class="absolute bottom-6">
-      <LangSwitcher />
-    </div>
+    </section>
   </div>
 </template>

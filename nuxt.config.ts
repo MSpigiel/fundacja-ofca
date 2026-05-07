@@ -7,6 +7,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
 
+  css: ['~/assets/css/main.css'],
+
   i18n: {
     locales: [
       { code: 'pl', name: 'Polski', file: 'pl.json' },

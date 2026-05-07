@@ -1,8 +1,32 @@
 {
   "site": {
-    "title": "Ofca Foundation",
-    "subtitle": "Under Construction",
+    "title": "OFCA Foundation",
     "comingSoon": "Our new website is coming soon.",
     "stayTuned": "Stay tuned!"
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "news": "News",
+    "center": "NGO Support Center",
+    "centerShort": "NGO Support Center",
+    "contact": "Contact"
+  },
+  "projects": {
+    "festival": "OFCA Festival",
+    "workshops": "Circus Workshops for Children",
+    "center": "NGO Support Center"
+  },
+  "center": {
+    "goals": "Goals & Scope",
+    "hours": "Working Hours",
+    "reservation": "Room Reservation",
+    "contact": "Contact"
+  },
+  "footer": {
+    "siteMap": "Site Map",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved."
   }
 }

@@ -36,6 +36,9 @@ i18n/              # Translation files (pl.json, en.json)
 - **Accessibility is a priority** — WCAG 2.1 AA compliance, semantic HTML, keyboard nav, screen reader support, proper contrast, ARIA labels. Every component must be accessible from the start.
 - File-based CMS using JSON (no database for now, upgradeable to DB later)
 - Admin panel is a custom Vue UI (user-friendly for non-technical admin)
+- **Admin auth via Google OAuth** with email whitelist (only approved accounts can log in)
+- Security headers (CSP, X-Frame-Options, etc.), input sanitization, file upload validation
+- All CMS API routes protected by auth middleware
 - No third-party CMS services
 - Vercel free tier for hosting
 - Design assets (logo, colors) to be provided later

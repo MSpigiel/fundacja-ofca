@@ -22,3 +22,9 @@ logs
 .env
 .env.*
 !.env.example
+
+# Context files (personal documents)
+context/
+
+# IDE
+.idea/

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-dark font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply font-heading text-sm font-semibold uppercase tracking-wider text-dark transition-colors hover:text-dark/60;
+  }
+
+  .dropdown-link {
+    @apply block px-4 py-2 font-heading text-sm uppercase tracking-wider text-dark transition-colors hover:bg-cream;
+  }
+
+  .mobile-link {
+    @apply w-full px-2 py-3 text-left font-heading text-base font-semibold uppercase tracking-wider text-dark transition-colors hover:text-dark/60;
+  }
+}

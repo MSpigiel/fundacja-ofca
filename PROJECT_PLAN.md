@@ -1,6 +1,6 @@
 # Fundacja Ofca - Project Plan
 
-## Status: Phase 1 - Initial Setup
+## Status: Phase 1 Complete, Phase 2 Next
 
 ---
 
@@ -10,12 +10,63 @@
 - Multi-language: Polish (primary) + English
 - Custom admin panel for non-technical user (1-2 admins)
 - CMS features:
-  - News/posts management (create, edit, delete posts from admin panel)
-  - Photo slider (configurable images)
-  - Possibly one more configurable section (TBD)
+  - News/posts management (rich text: inline images, logos, links, mini gallery)
+  - Home page photo slider (click → links to news article)
+  - PDF document management (statute, yearly reports since 2015)
 - Auto-deploy on push to GitHub (Vercel)
-- Design references and logo/colors to be provided later
-- Tab/page structure to be defined later
+- Visual style inspired by festiwalofca.pl (background color, fonts, font colors, layout)
+- NO diamond/rhombus graphics — use photos
+- Functionality reference: oppenheim.org/pl (minimalist, similar UX patterns)
+- "Fundacja OFCA" text as logo placeholder until new logo is designed
+
+## Site Structure (from Word doc + screenshot)
+
+### Navigation Layout
+Center-logo nav: items split on both sides of the logo
+```
+O FUNDACJI | PROJEKTY | AKTUALNOŚCI | [FUNDACJA OFCA] | CENTRUM WSPIERANIA ORG. POZARZĄDOWYCH | KONTAKT
+```
+
+### Page Map
+
+#### 1. Home (Strona Główna)
+- Photo slider (smaller than Oppenheim's, same functionality: click image → news article)
+- "Fundacja OFCA" in nav acts as home link (will be replaced by logo later)
+
+#### 2. O Fundacji (About) — no submenu
+Single page with sections:
+- O fundacji — about text
+- Zarząd Fundacji — board members text
+- Statut Fundacji — PDF download button
+- Sprawozdania merytoryczne — yearly report PDFs download (since 2015, ~12 docs)
+- Sprawozdania finansowe — yearly financial report PDFs download
+- Reference layout: oppenheim.org/pl foundation page (statute + reports together)
+
+#### 3. Projekty (Projects) — dropdown submenu
+Each project is a separate sub-page with text + mini photo gallery (click to enlarge + browse):
+- Festiwal OFCA
+- Warsztaty cyrkowe dla dzieci
+- Centrum Wspierania Organizacji Pozarządowych
+- Gallery reference: Oppenheim OP_BOOKS page (thumbnail → lightbox → browse all)
+
+#### 4. Aktualności (News) — no submenu, **CMS-managed**
+- List view: card grid with image + title + excerpt
+- Click card → full article on separate page
+- **Admin must be able to**: add/edit/delete articles with rich text, inline images/logos, links, mini photo gallery
+- Reference layout: Oppenheim Aktualności page
+
+#### 5. Centrum Wspierania Organizacji Pozarządowych — dropdown submenu
+Sub-pages:
+- Cele i zakres wsparcia (Goals & scope)
+- Godziny pracy (Working hours)
+- Rezerwacja Sali (Room reservation)
+- Kontakt (Contact for this center)
+
+#### 6. Kontakt (Contact) — no submenu
+- Address
+- Email addresses
+- Phone numbers
+- Bank account number
 
 ## Tech Stack (Agreed)
 | Layer       | Choice              | Reason                                    |
@@ -31,43 +82,56 @@
 
 ## Phases
 
-### Phase 1: Initial Setup [IN PROGRESS]
+### Phase 1: Initial Setup [COMPLETE]
 - [x] Initialize Nuxt 3 project (minimal template)
 - [x] Initialize git repo
-- [x] Install base dependencies (nuxt, vue, vue-router)
-- [ ] Install Tailwind CSS module
-- [ ] Install i18n module
-- [ ] Configure nuxt.config.ts (tailwind, i18n)
-- [ ] Create basic project structure (pages/, components/, layouts/, content/, i18n/, server/api/)
-- [ ] Create minimal landing page (placeholder "coming soon" style)
-- [ ] Create Vercel config
-- [ ] Push to GitHub
-- [ ] Deploy to Vercel (get live URL)
-- [ ] Share URL with friend for validation
+- [x] Install dependencies (nuxt, vue, vue-router, tailwind, i18n)
+- [x] Configure nuxt.config.ts (tailwind, i18n PL/EN)
+- [x] Create project structure (pages/, components/, layouts/, content/, i18n/, server/api/)
+- [x] Create "coming soon" landing page with language switcher
+- [x] Vercel config
+- [x] Push to GitHub (MSpigiel/fundacja-ofca)
+- [x] Deploy to Vercel (https://fundacja-ofca.vercel.app)
 
-### Phase 2: Layout & Navigation [NOT STARTED]
-- [ ] Design and implement main layout (header, nav, footer)
-- [ ] Set up page routing (tabs structure - TBD)
-- [ ] Implement language switcher (PL/EN)
-- [ ] Apply design assets when provided (logo, colors, fonts)
+### Phase 2: Layout & Navigation [NEXT]
+- [ ] Main layout: header with center-logo nav, footer
+- [ ] Nav with dropdown submenus (Projekty, Centrum Wspierania)
+- [ ] Mobile hamburger menu
+- [ ] Language switcher (PL/EN) in nav
+- [ ] Page routing for all pages (including sub-pages)
+- [ ] Apply visual style from festiwalofca.pl (colors, fonts — details TBD)
 - [ ] Responsive design (mobile-first)
 
 ### Phase 3: Content Pages [NOT STARTED]
-- [ ] Home page with hero section
-- [ ] About page (foundation info)
-- [ ] News page (list of posts from CMS)
-- [ ] Single news post page
-- [ ] Photo gallery/slider page
-- [ ] Contact page
-- [ ] (Other pages TBD based on requirements)
+- [ ] Home page with photo slider (click → article)
+- [ ] O Fundacji page (sections: about, board, statute PDF, reports PDFs)
+- [ ] Projekty sub-pages (Festiwal OFCA, Warsztaty, Centrum) with photo galleries
+- [ ] Photo gallery component (thumbnail grid → lightbox with browse)
+- [ ] Aktualności list page (card grid: image + title + excerpt)
+- [ ] Aktualności single article page (rich content, inline images, mini gallery)
+- [ ] Centrum Wspierania sub-pages (4 sub-pages)
+- [ ] Kontakt page (address, email, phone, bank account)
+- [ ] PDF download component (for statute + yearly reports)
 
 ### Phase 4: Admin Panel / CMS [NOT STARTED]
-- [ ] Admin route group with simple auth (password-based)
+- [ ] Google OAuth authentication
+- [ ] Email whitelist for allowed admins
+- [ ] Admin route group protected by auth middleware
 - [ ] Dashboard overview
-- [ ] News post editor (create/edit/delete)
-- [ ] Photo slider manager (upload/reorder/delete images)
+- [ ] News article editor (rich text: headings, images, logos, links, mini gallery)
+- [ ] Home page slider manager (upload images, link to articles, reorder)
+- [ ] PDF document manager (upload/manage statute + reports)
+- [ ] Input sanitization on all CMS content (prevent XSS)
+- [ ] File upload validation (type whitelist, size limits)
 - [ ] Preview before publish
 - [ ] User-friendly UI for non-technical admin
+
+### Phase 4.5: Security Hardening [NOT STARTED]
+- [ ] Security headers (CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy)
+- [ ] CSRF protection verification (SameSite cookies)
+- [ ] CMS API routes locked behind auth middleware
+- [ ] Rate limiting on auth and API endpoints
+- [ ] Security audit / review before launch
 
 ### Phase 5: Accessibility & Polish [NOT STARTED]
 - [ ] Accessibility audit (axe / Lighthouse)
@@ -84,15 +148,33 @@
 
 ---
 
-## Open Questions / TBD
-- Page/tab structure (which pages exactly?)
-- Design references, logo, color palette
-- What is the "one more configurable thing" beyond news + slider?
-- Admin authentication approach (simple password? invite-only?)
-- Contact form handling (email service?)
-- Any specific content for launch?
+## Security Approach (Agreed)
+- Google OAuth for admin authentication
+- Email whitelist (only approved emails can access admin panel)
+- Input sanitization on all CMS-managed content
+- File upload validation (image types only, size limits)
+- Security headers hardened in nuxt.config.ts
+- All CMS API routes require authenticated session
+
+## Design Direction
+- **Inspired by**: festiwalofca.pl (colors, fonts, layout, menu) — but NOT a copy
+- **Functionality reference**: oppenheim.org/pl (minimalist, similar content patterns)
+- **No diamond/rhombus graphics** — photos only
+- **Photo galleries**: thumbnail grid → lightbox with prev/next browse (like Oppenheim OP_BOOKS)
+- **Slider**: smaller than Oppenheim, click image → news article
+- **Logo**: text placeholder "Fundacja OFCA" until new logo designed
+
+## Open Questions
+- Dropdown menus: hover or click trigger?
+- News editor: WYSIWYG or markdown-based?
+- PDF management: admin-uploadable via CMS or developer-managed?
+- Centrum Wspierania is both a nav item AND a project under Projekty — same content or separate?
+- Admin whitelisted emails (which Google accounts?)
+- Contact form needed or just static info?
+- Exact colors/fonts from festiwalofca.pl to use?
 
 ---
 
 ## Session Log
-- **2026-05-07**: Project kickoff. Agreed on tech stack. Initialized Nuxt 3 project. Hit disk space issue (resolved with npm cache clean). Created project documentation.
+- **2026-05-07**: Project kickoff. Agreed on tech stack. Initialized Nuxt 3 project. Installed deps (Tailwind, i18n). Created coming soon landing page. Pushed to GitHub (MSpigiel/fundacja-ofca). Deployed to Vercel at https://fundacja-ofca.vercel.app. Phase 1 complete.
+- **2026-05-07**: Analyzed context files (email, Word doc, screenshot). Extracted full site structure with 6 main sections. Updated plan with detailed page map, design direction, and open questions. PDF in context folder is unrelated (electricity bill).
