@@ -7,21 +7,26 @@ Multi-language (PL/EN), with a lightweight custom CMS for admin content manageme
 ## Tech Stack
 - **Framework**: Nuxt 3 (Vue 3)
 - **Styling**: Tailwind CSS
-- **i18n**: @nuxtjs/i18n (Polish + English)
-- **CMS**: Custom file-based (JSON files in `/content/` directory), with a simple admin panel
+- **i18n**: @nuxtjs/i18n (Polish + English, currently PL only active)
+- **CMS**: Custom admin panel with Tiptap WYSIWYG editor
+- **Article storage**: Upstash Redis (via Vercel KV integration)
+- **Image storage**: Vercel Blob (CDN-delivered, client-side WebP compression)
 - **Deployment**: Vercel (auto-deploy on push to `main`)
+- **Domain**: fundacjaofca.pl
 - **Package manager**: npm
 
 ## Project Structure
 ```
 app/
-  pages/           # Route pages
-  components/      # Reusable Vue components
+  pages/           # Route pages (news/, admin/, center/, projects/)
+  components/      # Reusable Vue components (+ admin/ subfolder)
   layouts/         # Page layouts
-  composables/     # Shared logic
-content/           # JSON data files for CMS (posts, slider images, etc.)
+  composables/     # Shared data fetching (useArticles)
+  utils/           # Shared utilities (formatDate, compressImage)
 server/
-  api/             # API routes for admin CMS operations
+  api/             # API routes (articles CRUD, image upload)
+  utils/           # Server utilities (Redis client, slugify, sanitize)
+types/             # TypeScript interfaces
 public/            # Static assets (images, favicon)
 i18n/              # Translation files (pl.json, en.json)
 ```
@@ -32,18 +37,34 @@ i18n/              # Translation files (pl.json, en.json)
 - `npm run generate` — Static generation
 - `npm run preview` — Preview production build
 
+## Environment Variables
+Required in `.env` (see `.env.example`):
+- `BLOB_READ_WRITE_TOKEN` — Vercel Blob storage for image uploads
+- `KV_REST_API_URL` — Upstash Redis URL for article storage
+- `KV_REST_API_TOKEN` — Upstash Redis auth token
+
 ## Key Decisions
 - **Accessibility is a priority** — WCAG 2.1 AA compliance, semantic HTML, keyboard nav, screen reader support, proper contrast, ARIA labels. Every component must be accessible from the start.
-- File-based CMS using JSON (no database for now, upgradeable to DB later)
-- Admin panel is a custom Vue UI (user-friendly for non-technical admin)
-- **Admin auth via Google OAuth** with email whitelist (only approved accounts can log in)
-- Security headers (CSP, X-Frame-Options, etc.), input sanitization, file upload validation
-- All CMS API routes protected by auth middleware
+- Upstash Redis for article data (migrated from file-based JSON — Vercel filesystem is read-only)
+- Vercel Blob for images with client-side WebP compression before upload
+- Tiptap WYSIWYG editor for non-technical admin (bold, italic, headings, lists, links, images)
+- Admin panel is a custom Vue UI within the same Nuxt app (`/admin` routes)
+- **Admin auth via Google OAuth** with email whitelist (Phase 4 — not yet implemented)
+- Security headers, input sanitization (server-side HTML sanitize), file upload validation (type + 5MB limit)
 - No third-party CMS services
 - Vercel free tier for hosting
-- Design assets (logo, colors) to be provided later
-- Tab structure / content to be defined later
+
+## API Routes
+- `GET /api/articles` — List all (optional `?limit=N`)
+- `GET /api/articles/:slug` — Single article
+- `POST /api/articles` — Create article
+- `PUT /api/articles/:slug` — Update article
+- `DELETE /api/articles/:slug` — Delete article + cleanup blobs
+- `POST /api/upload` — Upload image to Vercel Blob
 
 ## Development Notes
 - Node >= 20 required
-- Nuxt 4 compatibility mode (template: minimal)
+- Nuxt 4 compatibility mode
+- Server utils are auto-imported by Nuxt (no explicit imports needed in API routes)
+- Components in `admin/` subfolder are auto-imported with `Admin` prefix (e.g. `AdminTiptapEditor`)
+- Utils in `app/utils/` are auto-imported (e.g. `formatDate`, `compressImage`)

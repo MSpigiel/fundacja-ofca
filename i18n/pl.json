@@ -2,7 +2,8 @@
   "site": {
     "title": "Fundacja OFCA",
     "comingSoon": "Wkrótce tutaj pojawi się nasza nowa strona internetowa.",
-    "stayTuned": "Bądźcie z nami!"
+    "stayTuned": "Bądźcie z nami!",
+    "description": "Fundacja OFCA to organizacja wspierająca rozwój współczesnej sztuki cyrkowej. Jej najważniejszym przedsięwzięciem jest organizowany od 2014 roku Festiwal OFCA, prezentujący różnorodne formy Nowego Cyrku i integrujący środowisko artystyczne. Fundacja wzbogaca także lokalną ofertę kulturalną, prowadzi warsztaty cyrkowe dla dzieci i młodzieży, angażuje wolontariuszy oraz skutecznie pozyskuje granty na realizację swoich działań."
   },
   "nav": {
     "about": "O Fundacji",
@@ -22,6 +23,22 @@
     "hours": "Godziny pracy",
     "reservation": "Rezerwacja Sali",
     "contact": "Kontakt"
+  },
+  "news": {
+    "title": "Aktualności",
+    "loading": "Ładowanie...",
+    "empty": "Brak aktualności.",
+    "backToList": "Wróć do aktualności",
+    "gallery": "Galeria",
+    "notFound": "Nie znaleziono artykułu.",
+    "noPhoto": "Brak zdjęcia"
+  },
+  "slider": {
+    "label": "Najnowsze aktualności",
+    "prev": "Poprzedni slajd",
+    "next": "Następny slajd",
+    "empty": "Brak aktualności",
+    "readMore": "czytaj więcej"
   },
   "footer": {
     "siteMap": "Mapa Strony",

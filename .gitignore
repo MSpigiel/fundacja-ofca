@@ -29,3 +29,4 @@ context/
 # IDE
 .idea/
 .vercel
+.claude/
