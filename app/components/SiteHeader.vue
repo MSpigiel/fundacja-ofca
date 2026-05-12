@@ -1,5 +1,5 @@
 <template>
-  <header class="border-b border-dark/10">
+  <header class="border-b border-dark">
     <div class="container mx-auto px-4">
       <!-- Mobile header -->
       <div class="flex items-center justify-between py-4 lg:hidden">
@@ -58,7 +58,7 @@
           <!-- Right nav items -->
           <div class="flex items-center justify-end gap-8">
             <NavDropdown>
-              <template #trigger>{{ $t('nav.centerShort') }}</template>
+              <template #trigger>{{ $t('nav.center') }}</template>
               <NuxtLink :to="localePath('/center/goals')" class="dropdown-link" role="menuitem">
                 {{ $t('center.goals') }}
               </NuxtLink>
@@ -77,7 +77,6 @@
               {{ $t('nav.contact') }}
             </NuxtLink>
 
-            <LangSwitcher />
           </div>
         </div>
       </nav>
@@ -123,7 +122,7 @@
 
             <div class="flex flex-col">
               <button class="mobile-link flex items-center justify-between" @click="centerOpen = !centerOpen">
-                {{ $t('nav.centerShort') }}
+                {{ $t('nav.center') }}
                 <svg class="h-4 w-4 transition-transform" :class="{ 'rotate-180': centerOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
@@ -148,9 +147,6 @@
               {{ $t('nav.contact') }}
             </NuxtLink>
 
-            <div class="mt-4 border-t border-dark/10 pt-4">
-              <LangSwitcher />
-            </div>
           </div>
         </nav>
       </Transition>

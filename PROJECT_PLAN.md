@@ -1,6 +1,6 @@
 # Fundacja Ofca - Project Plan
 
-## Status: Phase 1 Complete, Phase 2 Next
+## Status: Phase 2 Complete, Phase 3 Next
 
 ---
 
@@ -93,16 +93,18 @@ Sub-pages:
 - [x] Push to GitHub (MSpigiel/fundacja-ofca)
 - [x] Deploy to Vercel (https://fundacja-ofca.vercel.app)
 
-### Phase 2: Layout & Navigation [NEXT]
-- [ ] Main layout: header with center-logo nav, footer
-- [ ] Nav with dropdown submenus (Projekty, Centrum Wspierania)
-- [ ] Mobile hamburger menu
-- [ ] Language switcher (PL/EN) in nav
-- [ ] Page routing for all pages (including sub-pages)
-- [ ] Apply visual style from festiwalofca.pl (colors, fonts — details TBD)
-- [ ] Responsive design (mobile-first)
+### Phase 2: Layout & Navigation [COMPLETE]
+- [x] Main layout: header with center-logo nav, footer
+- [x] Nav with dropdown submenus (Projekty, Centrum Wspierania)
+- [x] Mobile hamburger menu
+- [x] Language switcher (PL/EN) in nav
+- [x] Page routing for all 10 pages (including sub-pages)
+- [x] Visual style from festiwalofca.pl (cream bg #F8EFE6, Antonio headings, Lato body, dark text #201E1E)
+- [x] Tailwind config with extracted color palette (cream, dark, pink, purple, orange, gold)
+- [x] Skip-to-content link (a11y)
+- [x] Footer with site map, contact, social links
 
-### Phase 3: Content Pages [NOT STARTED]
+### Phase 3: Content Pages [NEXT]
 - [ ] Home page with photo slider (click → article)
 - [ ] O Fundacji page (sections: about, board, statute PDF, reports PDFs)
 - [ ] Projekty sub-pages (Festiwal OFCA, Warsztaty, Centrum) with photo galleries
@@ -177,4 +179,6 @@ Sub-pages:
 
 ## Session Log
 - **2026-05-07**: Project kickoff. Agreed on tech stack. Initialized Nuxt 3 project. Installed deps (Tailwind, i18n). Created coming soon landing page. Pushed to GitHub (MSpigiel/fundacja-ofca). Deployed to Vercel at https://fundacja-ofca.vercel.app. Phase 1 complete.
-- **2026-05-07**: Analyzed context files (email, Word doc, screenshot). Extracted full site structure with 6 main sections. Updated plan with detailed page map, design direction, and open questions. PDF in context folder is unrelated (electricity bill).
+- **2026-05-07**: Analyzed context files (email, Word doc, screenshot). Extracted full site structure with 6 main sections. Updated plan with detailed page map, design direction, and open questions. PDF in context folder is unrelated (removed).
+- **2026-05-07**: Phase 2 complete. Built full layout: center-logo nav, dropdown menus, mobile hamburger, footer. Extracted exact styles from festiwalofca.pl CSS (Antonio + Lato fonts, cream #F8EFE6 bg, color palette). Created all 10 page route stubs. Deployed to Vercel. Vercel CLI also configured for direct deploys.
+- **2026-05-08**: Session ended. Next: Phase 3 — fill in content pages one by one, starting with Home (slider) or whichever page client prioritizes.
