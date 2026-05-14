@@ -32,12 +32,12 @@
           :aria-label-suffix="` (${index + 1} z ${articles.length})`"
         >
           <!-- Image half -->
-          <div class="flex w-1/2 items-center justify-center bg-dark/5">
+          <div class="aspect-square shrink-0">
             <img
               v-if="article.previewImage"
               :src="article.previewImage"
               :alt="article.title"
-              class="h-full w-full object-contain"
+              class="h-full w-full object-cover"
               :loading="index === 0 ? 'eager' : 'lazy'"
             >
             <div v-else class="flex h-full items-center justify-center bg-dark/5">
@@ -46,7 +46,7 @@
           </div>
 
           <!-- Text half -->
-          <div class="flex w-1/2 flex-col justify-center px-10 lg:px-16">
+          <div class="flex min-w-0 flex-1 flex-col justify-center px-10 lg:px-16">
             <h3 class="mb-3 text-3xl font-bold uppercase leading-tight lg:text-4xl">
               {{ article.title }}
             </h3>
