@@ -3,12 +3,12 @@
     :to="localePath(`/news/${article.slug}`)"
     class="group block overflow-hidden bg-white transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
   >
-    <div class="aspect-[16/10] overflow-hidden">
+    <div class="flex aspect-[16/10] items-center justify-center overflow-hidden bg-dark/5">
       <img
         v-if="article.previewImage"
         :src="article.previewImage"
         :alt="article.title"
-        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
         loading="lazy"
       >
       <div v-else class="flex h-full items-center justify-center bg-dark/5">
