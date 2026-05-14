@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap');
+/* Fonts loaded via nuxt.config.ts <link> tags for better performance (preconnect + non-blocking) */
 
 @tailwind base;
 @tailwind components;

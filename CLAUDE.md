@@ -42,6 +42,7 @@ Required in `.env` (see `.env.example`):
 - `BLOB_READ_WRITE_TOKEN` — Vercel Blob storage for image uploads
 - `KV_REST_API_URL` — Upstash Redis URL for article storage
 - `KV_REST_API_TOKEN` — Upstash Redis auth token
+- `ADMIN_PASSWORD` — Admin panel password (set on Vercel via `npx vercel env add ADMIN_PASSWORD`)
 
 ## Key Decisions
 - **Accessibility is a priority** — WCAG 2.1 AA compliance, semantic HTML, keyboard nav, screen reader support, proper contrast, ARIA labels. Every component must be accessible from the start.
@@ -49,7 +50,7 @@ Required in `.env` (see `.env.example`):
 - Vercel Blob for images with client-side WebP compression before upload
 - Tiptap WYSIWYG editor for non-technical admin (bold, italic, headings, lists, links, images)
 - Admin panel is a custom Vue UI within the same Nuxt app (`/admin` routes)
-- **Admin auth via Google OAuth** with email whitelist (Phase 4 — not yet implemented)
+- **Admin auth via password** with session cookies (httpOnly, secure, 7-day expiry, in-memory session store)
 - Security headers, input sanitization (server-side HTML sanitize), file upload validation (type + 5MB limit)
 - No third-party CMS services
 - Vercel free tier for hosting
@@ -57,10 +58,13 @@ Required in `.env` (see `.env.example`):
 ## API Routes
 - `GET /api/articles` — List all (optional `?limit=N`)
 - `GET /api/articles/:slug` — Single article
-- `POST /api/articles` — Create article
-- `PUT /api/articles/:slug` — Update article
-- `DELETE /api/articles/:slug` — Delete article + cleanup blobs
-- `POST /api/upload` — Upload image to Vercel Blob
+- `POST /api/articles` — Create article (auth required)
+- `PUT /api/articles/:slug` — Update article (auth required)
+- `DELETE /api/articles/:slug` — Delete article + cleanup blobs (auth required)
+- `POST /api/upload` — Upload image to Vercel Blob (auth required)
+- `POST /api/auth/login` — Admin login
+- `POST /api/auth/logout` — Admin logout
+- `GET /api/auth/check` — Session validation
 
 ## Development Notes
 - Node >= 20 required

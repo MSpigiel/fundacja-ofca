@@ -47,7 +47,7 @@
         <div v-if="article.galleryImages.length === 1" class="flex items-center justify-center pt-10 lg:pt-0">
           <button
             class="cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
-            aria-label="Powiększ zdjęcie"
+            :aria-label="`Powiększ zdjęcie: ${article.title}`"
             @click="openLightbox(0)"
           >
             <img

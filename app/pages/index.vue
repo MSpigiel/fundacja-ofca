@@ -3,6 +3,7 @@
     <!-- Slider -->
     <ArticleSlider />
 
+
     <!-- About excerpt -->
     <section class="container mx-auto px-4 py-16">
       <div class="mx-auto max-w-3xl text-center">
@@ -14,3 +15,12 @@
     </section>
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  title: 'Fundacja OFCA — Współczesna Sztuka Cyrkowa',
+  meta: [
+    { name: 'description', content: 'Fundacja OFCA wspiera rozwój współczesnej sztuki cyrkowej w Polsce. Organizujemy Festiwal OFCA, warsztaty cyrkowe i prowadzimy Centrum Wspierania Twórczości Cyrkowej.' },
+  ],
+})
+</script>

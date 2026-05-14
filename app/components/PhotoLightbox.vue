@@ -10,19 +10,22 @@
     >
       <div
         v-if="open"
+        ref="dialogEl"
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
         role="dialog"
         aria-modal="true"
         :aria-label="`Zdjęcie ${currentIndex + 1} z ${images.length}`"
+        tabindex="-1"
         @keydown.escape="$emit('close')"
         @keydown.left="prev"
         @keydown.right="next"
+        @click.self="$emit('close')"
       >
         <!-- Close button -->
         <button
           ref="closeBtn"
-          class="absolute right-4 top-4 z-10 p-2 text-white/70 transition-colors hover:text-white"
-          aria-label="Zamknij"
+          class="absolute right-4 top-4 z-10 p-2 text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          aria-label="Zamknij galerię"
           @click="$emit('close')"
         >
           <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -33,7 +36,7 @@
         <!-- Previous button -->
         <button
           v-if="images.length > 1"
-          class="absolute left-4 z-10 p-2 text-white/70 transition-colors hover:text-white"
+          class="absolute left-4 z-10 p-2 text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           aria-label="Poprzednie zdjęcie"
           @click="prev"
         >
@@ -45,14 +48,14 @@
         <!-- Image -->
         <img
           :src="images[currentIndex]?.src"
-          :alt="images[currentIndex]?.alt || ''"
+          :alt="images[currentIndex]?.alt || `Zdjęcie ${currentIndex + 1}`"
           class="max-h-[90vh] max-w-[90vw] object-contain"
         >
 
         <!-- Next button -->
         <button
           v-if="images.length > 1"
-          class="absolute right-4 z-10 p-2 text-white/70 transition-colors hover:text-white"
+          class="absolute right-4 z-10 p-2 text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           aria-label="Następne zdjęcie"
           @click="next"
         >
@@ -65,6 +68,7 @@
         <div
           v-if="images.length > 1"
           class="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/60"
+          aria-live="polite"
         >
           {{ currentIndex + 1 }} / {{ images.length }}
         </div>
@@ -88,15 +92,26 @@ defineEmits<{
 
 const currentIndex = ref(props.startIndex ?? 0)
 const closeBtn = ref<HTMLButtonElement | null>(null)
+const dialogEl = ref<HTMLElement | null>(null)
 
 watch(() => props.startIndex, (val) => {
   currentIndex.value = val ?? 0
 })
 
+// Focus management + body scroll lock
 watch(() => props.open, (val) => {
   if (val) {
     nextTick(() => closeBtn.value?.focus())
+    document.body.style.overflow = 'hidden'
   }
+  else {
+    document.body.style.overflow = ''
+  }
+})
+
+// Clean up scroll lock on unmount
+onUnmounted(() => {
+  document.body.style.overflow = ''
 })
 
 function prev() {

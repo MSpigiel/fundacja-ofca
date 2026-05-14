@@ -11,7 +11,7 @@
     @focusout="paused = false"
   >
     <!-- Slides -->
-    <div class="relative h-[28rem]">
+    <div class="relative h-[28rem]" aria-live="polite" aria-atomic="true">
       <TransitionGroup
         enter-active-class="transition duration-500 ease-out"
         enter-from-class="opacity-0 translate-x-8"

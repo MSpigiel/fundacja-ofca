@@ -97,13 +97,18 @@
             </NuxtLink>
 
             <div class="flex flex-col">
-              <button class="mobile-link flex items-center justify-between" @click="projectsOpen = !projectsOpen">
+              <button
+                :aria-expanded="projectsOpen"
+                aria-controls="mobile-projects-menu"
+                class="mobile-link flex items-center justify-between"
+                @click="projectsOpen = !projectsOpen"
+              >
                 {{ $t('nav.projects') }}
                 <svg class="h-4 w-4 transition-transform" :class="{ 'rotate-180': projectsOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div v-show="projectsOpen" class="flex flex-col pl-4">
+              <div v-show="projectsOpen" id="mobile-projects-menu" class="flex flex-col pl-4">
                 <NuxtLink :to="localePath('/projects/festival')" class="mobile-link text-sm" @click="mobileOpen = false">
                   {{ $t('projects.festival') }}
                 </NuxtLink>
@@ -121,13 +126,18 @@
             </NuxtLink>
 
             <div class="flex flex-col">
-              <button class="mobile-link flex items-center justify-between" @click="centerOpen = !centerOpen">
+              <button
+                :aria-expanded="centerOpen"
+                aria-controls="mobile-center-menu"
+                class="mobile-link flex items-center justify-between"
+                @click="centerOpen = !centerOpen"
+              >
                 {{ $t('nav.center') }}
                 <svg class="h-4 w-4 transition-transform" :class="{ 'rotate-180': centerOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div v-show="centerOpen" class="flex flex-col pl-4">
+              <div v-show="centerOpen" id="mobile-center-menu" class="flex flex-col pl-4">
                 <NuxtLink :to="localePath('/center/goals')" class="mobile-link text-sm" @click="mobileOpen = false">
                   {{ $t('center.goals') }}
                 </NuxtLink>
