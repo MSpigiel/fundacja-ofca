@@ -31,3 +31,14 @@
     @apply w-full px-2 py-3 text-left font-heading text-base font-semibold uppercase tracking-wider text-dark transition-colors hover:text-dark/60;
   }
 }
+
+/* Article content from Tiptap editor */
+.article-content p {
+  margin-bottom: 1em;
+}
+
+.article-content p:empty,
+.article-content p > br:only-child {
+  margin-bottom: 0;
+  min-height: 1.5em;
+}

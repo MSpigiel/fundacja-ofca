@@ -35,14 +35,14 @@
           </header>
 
           <div
-            class="prose prose-lg max-w-none font-body"
+            class="article-content prose prose-lg max-w-none font-body"
             v-html="article.content"
           />
         </article>
       </div>
 
       <!-- Right: sticky image — sticks while scrolling, stops when it hits its own bottom -->
-      <div class="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:items-center lg:justify-center lg:p-8">
+      <div class="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:items-center lg:justify-start lg:p-8 lg:pt-28">
         <!-- Single image -->
         <div v-if="article.galleryImages.length === 1" class="flex items-center justify-center pt-10 lg:pt-0">
           <button

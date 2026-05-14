@@ -1,6 +1,7 @@
 import { del } from '@vercel/blob'
 
 export default defineEventHandler(async (event) => {
+  requireAuth(event)
   const slug = getRouterParam(event, 'slug')
 
   if (!slug) {

@@ -1,18 +1,21 @@
 <template>
   <div class="container mx-auto px-4 py-10">
-    <!-- Dev banner -->
-    <div class="mb-6 bg-orange/20 px-4 py-2 text-sm text-dark/70">
-      Panel administracyjny (wersja deweloperska — bez autoryzacji)
-    </div>
-
     <div class="mb-8 flex items-center justify-between">
       <h1 class="text-3xl font-bold uppercase">Aktualności — zarządzanie</h1>
-      <NuxtLink
-        to="/admin/articles/create"
-        class="bg-purple px-5 py-2 font-heading text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-purple/80"
-      >
-        + Dodaj artykuł
-      </NuxtLink>
+      <div class="flex items-center gap-3">
+        <NuxtLink
+          to="/admin/articles/create"
+          class="bg-purple px-5 py-2 font-heading text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-purple/80"
+        >
+          + Dodaj artykuł
+        </NuxtLink>
+        <button
+          class="px-4 py-2 text-sm text-dark/50 transition-colors hover:text-dark"
+          @click="handleLogout"
+        >
+          Wyloguj
+        </button>
+      </div>
     </div>
 
     <div v-if="pending" class="text-dark/40">Ładowanie...</div>
@@ -68,7 +71,16 @@
 <script setup lang="ts">
 import type { Article } from '~/types/article'
 
+definePageMeta({ middleware: 'admin-auth' })
+
+const router = useRouter()
+const { logout } = useAuth()
 const { data: articles, pending, refresh } = useArticlesList()
+
+async function handleLogout() {
+  await logout()
+  router.push('/admin/login')
+}
 
 async function confirmDelete(article: Article) {
   if (!confirm(`Czy na pewno chcesz usunąć "${article.title}"?`)) return

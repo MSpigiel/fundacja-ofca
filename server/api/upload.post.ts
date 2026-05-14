@@ -1,6 +1,7 @@
 import { put } from '@vercel/blob'
 
 export default defineEventHandler(async (event) => {
+  requireAuth(event)
   const form = await readMultipartFormData(event)
 
   if (!form || form.length === 0) {

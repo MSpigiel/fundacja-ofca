@@ -1,6 +1,7 @@
 import type { Article } from '~/types/article'
 
 export default defineEventHandler(async (event) => {
+  requireAuth(event)
   const body = await readBody(event)
 
   if (!body.title) {
