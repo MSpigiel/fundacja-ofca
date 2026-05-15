@@ -44,7 +44,7 @@
 
     <!-- Documents -->
     <section class="mt-16 max-w-3xl">
-      <h2 class="mb-6 text-2xl font-bold uppercase">Dokumenty</h2>
+      <h2 class="mb-6 text-4xl font-bold uppercase">Dokumenty</h2>
       <ul class="space-y-3 text-lg">
         <li>
           <span class="text-dark/80">Statut Fundacji</span>

@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4 py-16">
     <h1 class="mb-10 text-4xl font-bold uppercase">{{ $t('center.goals') }}</h1>
 
-    <div class="max-w-3xl space-y-6 text-lg leading-relaxed text-dark/80">
+    <div class="max-w-3xl space-y-6 text-base leading-relaxed text-dark">
       <p>
         Centrum Wspierania Organizacji Pozarządowych to miejsce kompleksowego wsparcia dla lokalnych
         organizacji społecznych posiadających siedzibę w Oleśnicy, w szczególności dla
@@ -41,7 +41,7 @@
         </li>
         <li>
           Otrzymania wsparcia w zakresie poszukiwania nowych źródeł finansowania działalności:
-          <ul class="mt-2 list-disc space-y-1 pl-6 text-dark/60">
+          <ul class="mt-2 list-disc space-y-1 pl-6 text-dark">
             <li>Analiza dotychczasowego sposobu finansowania organizacji</li>
             <li>
               Zapoznanie z podstawowymi źródłami finansowania działań podmiotu: granty i dotacje,

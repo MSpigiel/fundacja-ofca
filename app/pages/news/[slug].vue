@@ -6,7 +6,7 @@
   <template v-else-if="article">
     <div class="lg:flex lg:items-start">
       <!-- Left: article content (normal flow, scrolls with page) -->
-      <div class="px-6 py-10 lg:w-1/2 lg:px-12 lg:py-16">
+      <div class="px-6 py-10 lg:w-1/2 lg:py-16 lg:pl-28 lg:pr-12">
         <!-- Back link -->
         <NuxtLink
           :to="localePath('/news')"
@@ -42,7 +42,7 @@
       </div>
 
       <!-- Right: sticky image — sticks while scrolling, stops when it hits its own bottom -->
-      <div class="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:items-center lg:justify-start lg:p-8 lg:pt-28">
+      <div class="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:items-center lg:justify-start lg:p-8 lg:pt-[10.5rem]">
         <!-- Single image -->
         <div v-if="article.galleryImages.length === 1" class="flex items-center justify-center pt-10 lg:pt-0">
           <button

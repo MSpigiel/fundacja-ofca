@@ -45,7 +45,7 @@
 
           <div>
             <h2 class="mb-2 text-sm font-bold uppercase tracking-wider text-dark/40">Nr konta</h2>
-            <p class="font-mono text-dark/80">66 1240 4025 1111 0010 6358 0744</p>
+            <p class="text-dark/80">66 1240 4025 1111 0010 6358 0744</p>
           </div>
         </div>
       </div>

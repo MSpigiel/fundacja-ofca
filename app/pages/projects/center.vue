@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4 py-16">
     <h1 class="mb-10 text-4xl font-bold uppercase">{{ $t('projects.center') }}</h1>
 
-    <div class="max-w-3xl space-y-6 text-lg leading-relaxed text-dark/80">
+    <div class="max-w-3xl space-y-6 text-base leading-relaxed text-dark">
       <p>
         Centrum Wspierania Organizacji Pozarządowych to projekt dofinansowany przez Miasto Gminę
         Oleśnica, którego celem jest kompleksowe wsparcie dla lokalnych organizacji społecznych

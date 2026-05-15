@@ -53,7 +53,7 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              class="flex h-9 w-9 items-center justify-center rounded-full bg-white text-purple transition-colors hover:bg-white/80"
+              class="icon-link flex h-9 w-9 items-center justify-center rounded-full bg-white text-purple transition-colors hover:bg-white/80"
             >
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />

@@ -7,7 +7,7 @@
         Warsztaty cyrkowe dla dzieci to projekt stworzony z myślą o rozwijaniu pasji, odkrywaniu
         talentów oraz budowaniu więzi wśród młodych mieszkańców naszej społeczności. W ramach
         przedsięwzięcia odbyły się 24 spotkania warsztatowe, podzielone na dwie grupy wiekowe:
-        8–10 lat oraz 11–13 lat.
+        <br>8–10 lat oraz 11–13 lat.
       </p>
 
       <p>

@@ -157,8 +157,8 @@ async function handlePreviewUpload(event: Event) {
   try {
     error.value = ''
     uploadingPreview.value = true
-    // Preview images are small cards/slider — 800px max is plenty
-    const urls = await uploadCompressedFiles(input.files, { maxDimension: 800, quality: 0.8 })
+    // Preview images used in slider + cards — 1200px for sharp rendering on Retina screens
+    const urls = await uploadCompressedFiles(input.files, { maxDimension: 1200, quality: 0.82 })
     if (urls[0]) form.previewImage = urls[0]
   }
   catch (e: any) {

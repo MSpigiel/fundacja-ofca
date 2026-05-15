@@ -32,6 +32,15 @@
   }
 }
 
+/* Links — no underline or special color, match surrounding text */
+a:not(.icon-link),
+a:not(.icon-link):visited,
+a:not(.icon-link):hover,
+a:not(.icon-link):active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 /* Article content from Tiptap editor */
 .article-content p {
   margin-bottom: 1em;

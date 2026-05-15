@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4 py-16">
     <h1 class="mb-10 text-4xl font-bold uppercase">{{ $t('center.reservation') }}</h1>
 
-    <div class="max-w-3xl space-y-6 text-lg leading-relaxed text-dark/80">
+    <div class="max-w-2xl space-y-6 text-base leading-relaxed text-dark">
       <p>
         Zapraszamy wszystkie oleśnickie organizacje pozarządowe nieposiadające własnej przestrzeni
         lokalowej do bezpłatnego współkorzystania z przestrzeni biurowej znajdującej się w lokalu
@@ -16,7 +16,7 @@
 
       <div class="mt-8 border border-dark/10 px-6 py-5">
         <h2 class="mb-3 text-xl font-bold uppercase">Umów termin</h2>
-        <p class="mb-4 text-dark/60">
+        <p class="mb-4 text-dark">
           Aby zarezerwować przestrzeń, prosimy o kontakt mailowy lub telefoniczny.
         </p>
         <div class="space-y-1">

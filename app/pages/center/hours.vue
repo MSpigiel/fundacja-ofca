@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4 py-16">
     <h1 class="mb-10 text-4xl font-bold uppercase">{{ $t('center.hours') }}</h1>
 
-    <div class="max-w-3xl space-y-6 text-lg leading-relaxed text-dark/80">
+    <div class="max-w-3xl space-y-6 text-base leading-relaxed text-dark">
       <p>Centrum działa w następujących dniach i godzinach:</p>
 
       <div class="border border-dark/10 px-6 py-4">
