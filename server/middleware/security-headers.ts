@@ -32,7 +32,7 @@ export default defineEventHandler((event) => {
       // Fonts: self + Google Fonts CDN
       "font-src 'self' https://fonts.gstatic.com",
       // Images: self + Vercel Blob CDN + data URIs (for inline previews)
-      "img-src 'self' https://*.public.blob.vercel-storage.com data:",
+      "img-src 'self' https://*.public.blob.vercel-storage.com data: blob:",
       // API connections: self + Upstash Redis
       "connect-src 'self' https://*.upstash.io",
       // Disallow <object>, <embed>, <applet>
