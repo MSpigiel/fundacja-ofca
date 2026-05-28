@@ -23,5 +23,6 @@
     "nuxt": "^4.4.4",
     "vue": "^3.5.33",
     "vue-router": "^5.0.6"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

@@ -41,69 +41,8 @@
         </article>
       </div>
 
-      <!-- Right: sticky image — sticks while scrolling, stops when it hits its own bottom -->
-      <div class="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:items-center lg:justify-start lg:p-8 lg:pt-[10.5rem]">
-        <!-- Single image -->
-        <div v-if="article.galleryImages.length === 1" class="flex items-center justify-center pt-10 lg:pt-0">
-          <button
-            class="cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
-            :aria-label="`Powiększ zdjęcie: ${article.title}`"
-            @click="openLightbox(0)"
-          >
-            <img
-              :src="article.galleryImages[0].src"
-              :alt="article.galleryImages[0].alt || article.title"
-              class="max-h-[85vh] max-w-full object-contain"
-            >
-          </button>
-        </div>
-
-        <!-- Multiple images: show first, with gallery thumbnails -->
-        <div v-else-if="article.galleryImages.length > 1" class="flex max-h-screen flex-col items-center justify-center pt-10 lg:pt-0">
-          <button
-            class="min-h-0 flex-1 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
-            aria-label="Otwórz galerię"
-            @click="openLightbox(0)"
-          >
-            <img
-              :src="article.galleryImages[0].src"
-              :alt="article.galleryImages[0].alt || article.title"
-              class="h-full max-h-[calc(100vh-10rem)] w-auto max-w-full object-contain"
-            >
-          </button>
-          <div class="mt-3 flex shrink-0 gap-2">
-            <button
-              v-for="(img, index) in article.galleryImages.slice(0, 4)"
-              :key="index"
-              class="h-16 w-16 overflow-hidden border-2 border-white shadow-lg transition-transform hover:scale-105"
-              :class="{ 'ring-2 ring-purple': index === 0 }"
-              :aria-label="`Zdjęcie ${index + 1}`"
-              @click="openLightbox(index)"
-            >
-              <img
-                :src="img.src"
-                :alt="img.alt || ''"
-                class="h-full w-full object-cover"
-              >
-            </button>
-            <button
-              v-if="article.galleryImages.length > 4"
-              class="flex h-16 w-16 items-center justify-center border-2 border-white bg-dark/70 text-sm font-bold text-white shadow-lg"
-              aria-label="Pokaż wszystkie zdjęcia"
-              @click="openLightbox(4)"
-            >
-              +{{ article.galleryImages.length - 4 }}
-            </button>
-          </div>
-        </div>
-
-        <PhotoLightbox
-          :images="article.galleryImages"
-          :start-index="lightboxIndex"
-          :open="lightboxOpen"
-          @close="lightboxOpen = false"
-        />
-      </div>
+      <!-- Right: gallery -->
+      <PageGallery :images="article.galleryImages" :title="article.title" />
     </div>
   </template>
 
@@ -118,14 +57,6 @@ const localePath = useLocalePath()
 const slug = route.params.slug as string
 
 const { data: article, pending } = useArticle(slug)
-
-const lightboxOpen = ref(false)
-const lightboxIndex = ref(0)
-
-function openLightbox(index: number) {
-  lightboxIndex.value = index
-  lightboxOpen.value = true
-}
 
 useHead({
   title: () => article.value?.title || 'Aktualności',

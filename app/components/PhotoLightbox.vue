@@ -49,6 +49,7 @@
         <img
           :src="images[currentIndex]?.src"
           :alt="images[currentIndex]?.alt || `Zdjęcie ${currentIndex + 1}`"
+          loading="lazy"
           class="max-h-[90vh] max-w-[90vw] object-contain"
         >
 

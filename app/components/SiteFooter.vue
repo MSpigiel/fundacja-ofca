@@ -49,11 +49,11 @@
           </h3>
           <div class="flex gap-4">
             <a
-              href="https://facebook.com/festiwalofca"
+              href="https://www.facebook.com/profile.php?id=61590458697969"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              class="icon-link flex h-9 w-9 items-center justify-center rounded-full bg-[#1877F2] text-white transition-colors hover:bg-[#1877F2]/80"
+              class="icon-link flex h-9 w-9 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-white/10"
             >
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
