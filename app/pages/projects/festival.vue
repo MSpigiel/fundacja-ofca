@@ -1,7 +1,7 @@
 <template>
   <div class="lg:flex lg:items-start">
     <!-- Left: text content -->
-    <div class="px-6 py-10 lg:w-1/2 lg:py-16 lg:pl-28 lg:pr-12">
+    <div class="px-6 py-10 lg:w-1/2 lg:py-16 lg:pl-[5vw] xl:pl-28 lg:pr-12">
       <!-- Back link -->
       <NuxtLink
         :to="localePath('/')"

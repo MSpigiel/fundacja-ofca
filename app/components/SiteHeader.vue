@@ -1,6 +1,6 @@
 <template>
   <header class="border-b border-dark">
-    <div class="container mx-auto px-4">
+    <div class="px-4 lg:px-[5vw] xl:px-28">
       <!-- Mobile header -->
       <div class="flex items-center justify-between py-4 lg:hidden">
         <NuxtLink :to="localePath('/')" class="font-heading text-2xl font-bold uppercase">
