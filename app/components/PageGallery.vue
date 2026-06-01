@@ -1,31 +1,31 @@
 <template>
-  <div class="pb-10 lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:items-center lg:justify-center lg:overflow-hidden lg:p-8 lg:pb-24 lg:pt-[10.5rem]">
+  <div class="pb-10 lg:flex lg:w-1/2 lg:flex-col lg:items-center lg:justify-start lg:px-[7rem] lg:pb-16 lg:pt-[9.75rem]">
     <!-- Single image -->
-    <div v-if="images.length === 1" class="flex min-h-0 flex-1 items-center justify-center pt-10 lg:pt-0">
+    <div v-if="images.length === 1" class="flex items-center justify-center pt-10 lg:pt-0">
       <button
-        class="min-h-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
+        class="cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
         :aria-label="`Powiększ zdjęcie: ${title}`"
         @click="openLightbox(0)"
       >
         <img
           :src="images[0].src"
           :alt="images[0].alt || title"
-          class="max-h-full max-w-full object-contain"
+          class="max-w-full object-contain"
         >
       </button>
     </div>
 
     <!-- Multiple images: show first, with gallery thumbnails -->
-    <div v-else-if="images.length > 1" class="flex min-h-0 flex-1 flex-col items-center justify-center pt-10 lg:pt-0">
+    <div v-else-if="images.length > 1" class="flex flex-col items-center pt-10 lg:pt-0">
       <button
-        class="min-h-0 flex-1 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
+        class="cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
         aria-label="Otwórz galerię"
         @click="openLightbox(0)"
       >
         <img
           :src="images[0].src"
           :alt="images[0].alt || title"
-          class="max-h-full w-auto max-w-full object-contain"
+          class="w-auto max-w-full object-contain"
         >
       </button>
       <div class="mt-3 flex shrink-0 gap-2">
