@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-4 py-16">
+  <div class="px-6 py-16 lg:px-[5vw] xl:px-28">
     <h1 class="mb-10 text-4xl font-bold uppercase">{{ $t('projects.center') }}</h1>
 
     <div class="max-w-3xl space-y-6 text-base leading-relaxed text-dark">
