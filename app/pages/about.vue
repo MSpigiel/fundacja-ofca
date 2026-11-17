@@ -81,6 +81,14 @@
             <h3 class="mb-2 text-2xl font-bold uppercase">Sprawozdania finansowe</h3>
             <ul class="space-y-2 text-base text-dark">
               <li>
+                <a href="/documents/sprawozdania-finansowe/sprawozdanie-2025.pdf" download class="icon-link inline-flex items-center gap-2 transition-colors hover:text-dark/60">
+                  Sprawozdanie finansowe za 2025 rok
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+                  </svg>
+                </a>
+              </li>
+              <li>
                 <a href="/documents/sprawozdania-finansowe/sprawozdanie-2024.pdf" download class="icon-link inline-flex items-center gap-2 transition-colors hover:text-dark/60">
                   Sprawozdanie finansowe za 2024 rok
                   <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -111,6 +119,14 @@
           <div>
             <h3 class="mb-2 text-2xl font-bold uppercase">Sprawozdania merytoryczne</h3>
             <ul class="space-y-2 text-base text-dark">
+              <li>
+                <a href="/documents/sprawozdania-merytoryczne/sprawozdanie-2025.pdf" download class="icon-link inline-flex items-center gap-2 transition-colors hover:text-dark/60">
+                  Sprawozdanie merytoryczne za 2025 rok
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+                  </svg>
+                </a>
+              </li>
               <li>
                 <a href="/documents/sprawozdania-merytoryczne/sprawozdanie-2024.pdf" download class="icon-link inline-flex items-center gap-2 transition-colors hover:text-dark/60">
                   Sprawozdanie merytoryczne za 2024 rok
